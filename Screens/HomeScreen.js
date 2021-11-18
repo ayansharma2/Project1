@@ -1,21 +1,17 @@
 import React,{useState,useEffect} from 'react';
 import { StyleSheet ,Text,Image ,Platform,View,Card,TouchableWithoutFeedback} from 'react-native';
 import MedicineDeliveryAppBar,{NavigationBarNoBack,FilterPatient} from '../appbar';
-
+import { AddNewAddress } from '../BottomModals';
+import { TabIndicator } from '../Cards';
+import {CartProceedMultiple} from '../CTA';
+import { PopupAlertAction } from '../Dialog';
 export default function HomeScreen({navigation}) {
-  const [loading,setLoading] = useState(true)
-  const [data,setData] = useState([])
 
-  useEffect(() =>{
-    fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((response) => response.json())
-    .then(response => {setData(response)
-      setLoading(false)
-    })
-  })
-  
+  const [visibility,visibilityCallback] = useState(true)
   return (
-    <FilterPatient/>
+    <View style={[{flexDirection:'column',height:'100%'}]}>
+      <TabIndicator/>
+    </View>
   )
 }
 
