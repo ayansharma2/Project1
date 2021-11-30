@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { StyleSheet,ActivityIndicator  ,Text,Image ,Platform,View,Card,ImageBackground} from 'react-native';
+import { TopTabAppBar } from './App';
 
 export function LabOrderPlaced(){
     return (
@@ -82,16 +83,68 @@ export function MedicineTranscribing(){
 }
 
 
-export function TabIndicator(){
-    const items = ['Home Delivery','Store Pickup']
+
+
+export function Group13339(){
     return(
-        <View style={[{flexDirection: 'row',justifyContent: 'center',alignItem:'center',alignSelf: 'stretch',marginLeft:25}]}>
-           {
-               items.forEach(element => {
-                 <Text style={[{color: 'black',fontSize:25}]}>{element}</Text>
-                 console.log(element)  
-               })
-           }
+        <View style={[{flexDirection: 'column',margin:20,borderRadius:12,alignItems: 'center',backgroundColor:'white'}]}>
+            <View style={[{marginTop:12}]}>
+                <TopTabAppBar/>
+            </View>
+            <View style={[{marginTop:12,alignSelf:'stretch',height:1,marginBottom:12,backgroundColor:'#F0F3F6'}]}/>
+
+            <View style={[{marginTop:17,flexDirection:'row',justifyContent:'space-between',marginStart:20,marginRight:19,alignSelf:'stretch'}]}>
+                <View style={[{flexDirection:'column'}]}>
+                    <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'black'}]}>Medicine D</Text>
+                    <Text style={[{marginTop:1,fontFamily:'Inter-Regular',fontSize:10,lineHeight:15,letterSpacing:0.02,color:'#585969'}]}>1 Packet</Text>
+                </View>
+                <View style={[{flexDirection: 'row'}]}>
+                    <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'#000000'}]}>₹ 285</Text>
+                    <Image source={require('./assets/delete_20.png')} style={[{marginLeft:8}]}/>
+                </View>
+            </View>
+
+
+            <View style={[{marginTop:13,flexDirection:'row',justifyContent:'space-between',marginStart:20,marginRight:19,alignSelf:'stretch'}]}>
+                <View style={[{flexDirection:'column'}]}>
+                    <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'black'}]}>Medicine E</Text>
+                    <Text style={[{marginTop:1,fontFamily:'Inter-Regular',fontSize:10,lineHeight:15,letterSpacing:0.02,color:'#585969'}]}>2 Packet</Text>
+                </View>
+                <View style={[{flexDirection: 'row'}]}>
+                    <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'#000000'}]}>₹ 399</Text>
+                    <Image source={require('./assets/delete_20.png')} style={[{marginLeft:8}]}/>
+                </View>
+            </View>
+
+            <View style={[{flexDirection:'row',justifyContent:'space-between',alignSelf:'stretch',marginTop:8,marginStart:20,marginEnd:23,alignItems: 'center'}]}>
+                <View style={[{flexDirection:'row',alignItems:'center'}]}>
+                    <Text style={[{fontFamily:'Inter-Regular',fontSize:12,lineHeight:18,letterSpacing:0.04,color:'black'}]}>Coverage</Text>
+                    <Image source={require('./assets/info_white.png')}style={[{marginStart:4}]}/>
+                </View>
+                <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'#27AE60'}]}>- ₹ 1183</Text>
+            </View>
+            <View style={[{marginTop:10,marginHorizontal:20,backgroundColor:'#F0F3F6',height:1,alignSelf:'stretch'}]}/>
+            <View style={[{marginTop:8,marginHorizontal:20,flexDirection:'row',alignSelf:'stretch',justifyContent:'space-between'}]}>
+                <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'#000000'}]}>You Pay</Text>
+                <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'#000000'}]}>₹ 0</Text>
+            </View>
+            <View style={[{marginTop:8,marginHorizontal:20,backgroundColor:'#F0F3F6',height:1,alignSelf:'stretch'}]}/>
+            <View style={[{alignItems: 'center',marginTop:16,flexDirection: 'row',justifyContent: 'space-between',alignSelf:'stretch',marginHorizontal:20}]}>
+                <Text style={[{fontFamily:'Inter-Regular',fontSize:12,lineHeight:18,letterSpacing:0.04,color:'#585969'}]}>Partner</Text>
+                <Image source={require('./assets/medplus.png')}/>
+            </View>
+            <View style={[{borderRadius:12,marginBottom:12,flexDirection:'row',justifyContent:'space-between',backgroundColor:'#F5F9FF',alignSelf:'stretch',marginHorizontal:20,marginTop:16,alignItems: 'center'}]}>
+                <View style={[{flexDirection:'column',marginTop:12,marginLeft:12,marginBottom:12}]}>
+                    <Text style={[{fontFamily:'Inter-SemiBold',fontSize:12,lineHeight:18,letterSpacing:0.02,color:'#00000'}]}>Medplus</Text>
+                    <Text style={[{fontFamily:'Inter-Regular',fontSize:10,lineHeight:15,letterSpacing:0.04,color:'#585969'}]}>A-98, Okhla Phase 3, New Delhi</Text>
+                    <Text style={[{fontFamily:'Inter-Regular',fontSize:10,lineHeight:15,letterSpacing:0.04,color:'#585969'}]}>110045</Text>
+                </View>
+                <Image source={require('./assets/location_new.png')} style={[{marginLeft:32,marginRight:20}]}/>
+            </View>
+            <View style={[{flexDirection:'row',marginBottom:12,alignItems: 'center'}]}>
+                <Image source={require('./assets/bag.png')}/>
+                <Text style={[{fontFamily:'Inter-SemiBold',fontSize:10,lineHeight:15,marginLeft:8,letterSpacing:0.02,color:'#3F8CFF'}]}>5 more store to choose for pickup</Text>
+            </View>
         </View>
     )
 }

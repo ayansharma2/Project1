@@ -2,32 +2,27 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import HomeScreen from './Screens/HomeScreen';
 
-function HomeScreen() {
+function Home() {
   return (
     <View/>
   );
 }
 
-function SettingsScreen() {
+
+
+export default function App() {
   return (
-      <View/>
+    <HomeScreen/>
   );
 }
 
 const Tab = createMaterialTopTabNavigator();
-
-export default function App() {
-  return (
-    <TopTabAppBar/>
-  );
-}
-
-
-function TopTabAppBar(){
+export function TopTabAppBar(){
   return(
     <NavigationContainer style={[{height:300}]}>
-    <View style={[{flexDirection:'column',height:48,marginLeft:50,marginTop:100}]}>
+    <View style={[{height:48}]}>
     <Tab.Navigator
       style={[{width:265,borderRadius:12}]}
       
@@ -44,8 +39,8 @@ function TopTabAppBar(){
         },
       }}
     >
-      <Tab.Screen name="Home Delivery" component={HomeScreen} />
-      <Tab.Screen name="Store Pcikup" component={SettingsScreen} />
+      <Tab.Screen name="Home Delivery" component={Home} />
+      <Tab.Screen name="Store Pcikup" component={Home} />
     </Tab.Navigator>
     </View>
   </NavigationContainer>
