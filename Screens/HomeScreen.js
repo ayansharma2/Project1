@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
-import { StyleSheet ,Text,Image ,Platform,View,Card,TouchableWithoutFeedback} from 'react-native';
-import MedicineDeliveryAppBar,{NavigationBarNoBack,FilterPatient} from '../appbar';
+import { StyleSheet,Button ,Text,Image ,Platform,View,Card,TouchableWithoutFeedback} from 'react-native';
+import MedicineDeliveryAppBar,{NavigationBarNoBack,FilterPatient, NavigationBarOnlineChat1} from '../appbar';
 import { AddNewAddress } from '../BottomModals';
 import { Group13339 } from '../Cards';
 import { ListCardOnlineDoctorCart } from '../CliniConsultations';
@@ -11,7 +11,7 @@ export default function HomeScreen({navigation}) {
   const [visibility,visibilityCallback] = useState(true)
   return (
     <View style={[{flexDirection:'column',height:'100%'}]}>
-      <ListCardOnlineDoctorCart/>
+      <AddNewAddress/>
     </View>
   )
 }

@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import HomeScreen from './Screens/HomeScreen';
-
+import Navigator from './routes';
 function Home() {
   return (
     <View/>
@@ -14,7 +14,7 @@ function Home() {
 
 export default function App() {
   return (
-    <HomeScreen/>
+    <Navigator/>
   );
 }
 

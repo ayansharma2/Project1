@@ -6,14 +6,14 @@ const screens = {
     Home:{
         screen:Home,
         navigationOptions: {
-            headerShown: false,
+            header: null,
           }
 
     },
     SecondScreen:{
         screen:SecondScreen,
         navigationOptions: {
-            headerShowmn: false,
+            header: null,
           }
     }
 }

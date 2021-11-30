@@ -56,9 +56,12 @@ export function ChoosePatient(){
 
 
 export function AddNewAddress(){
-    const [address, onAddressChange] = React.useState("Useless Text");
+    const [address, onAddressChange] = React.useState("");
+    const [pinCode, onPinCodeChange] = React.useState("");
+    const [locality, onLocalityChnage] = React.useState("");
     const [addressFocused, onAddressFocuseChanged] = useState(false)
     const [pinCodeFocused, onPinCodeFocuseChanged] = useState(false)
+    const [localityFocused, onLocalityFocusChanged] = useState(false)
     const [index,setIndex] = useState(0)
     return(
         <View style={[{flexDirection:'column',alignSelf:'stretch',backgroundColor:'white',borderRadius:12,margin:10}]}>
@@ -71,11 +74,11 @@ export function AddNewAddress(){
             </View>
             <View style={[{marginTop:19,backgroundColor:'#F0F3F6',height:1,alignSelf:'stretch'}]}/>
             <Text style={[{fontSize:12,lineHeight:18,fontFamily:'Inter-Medium',color:'#0F0B28',marginLeft:20,marginTop:20}]}> Address </Text>
-            <TextInput value={address} onChange={onAddressChange} style={[{ borderColor : (addressFocused ? '#3F8CFF' : '#E3E3E3'),borderWidth:1.5 ,borderRadius:12,alignSelf:'stretch',marginHorizontal:20,marginTop:8,paddingTop:10,paddingBottom:9,paddingHorizontal:16 }]} onFocus={()=>{onAddressFocuseChanged(true)}} onBlur={()=>{onAddressFocuseChanged(false)}} placeholder="ex: C-24, okhla phase 3, new delhi "/>
+            <TextInput value={address} onChange={onAddressChange} style={[{ borderColor : (addressFocused ? '#3F8CFF' : '#E3E3E3'),borderWidth:1.5 ,borderRadius:12,alignSelf:'stretch',marginHorizontal:20,marginTop:8,paddingTop:10,paddingBottom:9,paddingHorizontal:16 }]} onFocus={()=>{onAddressFocuseChanged(true)}} onBlur={()=>{onAddressFocuseChanged(false)}} placeholder="ex: C-24, okhla phase 3, new delhi"/>
             <Text style={[{fontSize:12,lineHeight:18,fontFamily:'Inter-Medium',color:'#0F0B28',marginLeft:20,marginTop:24}]}> PinCode </Text>
-            <TextInput value={address} onChange={onAddressChange} style={[{ borderColor : (pinCodeFocused ? '#3F8CFF' : '#E3E3E3'),borderWidth:1.5 ,borderRadius:12,alignSelf:'stretch',marginHorizontal:20,marginTop:8,paddingTop:10,paddingBottom:9,paddingHorizontal:16 }]} onFocus={()=>{onPinCodeFocuseChanged(true)}} onBlur={()=>{onPinCodeFocuseChanged(false)}} placeholder="141001 " keyboardType="numeric"/>
+            <TextInput value={pinCode} onChange={onPinCodeChange} style={[{ borderColor : (pinCodeFocused ? '#3F8CFF' : '#E3E3E3'),borderWidth:1.5 ,borderRadius:12,alignSelf:'stretch',marginHorizontal:20,marginTop:8,paddingTop:10,paddingBottom:9,paddingHorizontal:16 }]} onFocus={()=>{onPinCodeFocuseChanged(true)}} onBlur={()=>{onPinCodeFocuseChanged(false)}} placeholder="141001" keyboardType="numeric"/>
             <Text style={[{fontSize:12,lineHeight:18,fontFamily:'Inter-Medium',color:'#0F0B28',marginLeft:20,marginTop:24}]}> Locality </Text>
-            <TextInput value={address} onChange={onAddressChange} style={[{ borderColor : (addressFocused ? '#3F8CFF' : '#E3E3E3'),borderWidth:1.5 ,borderRadius:12,alignSelf:'stretch',marginHorizontal:20,marginTop:8,paddingTop:10,paddingBottom:9,paddingHorizontal:16 }]} onFocus={()=>{onAddressFocuseChanged(true)}} onBlur={()=>{onAddressFocuseChanged(false)}} placeholder="near global market  " />
+            <TextInput value={locality} onChange={onLocalityChnage} style={[{ borderColor : (localityFocused ? '#3F8CFF' : '#E3E3E3'),borderWidth:1.5 ,borderRadius:12,alignSelf:'stretch',marginHorizontal:20,marginTop:8,paddingTop:10,paddingBottom:9,paddingHorizontal:16 }]} onFocus={()=>{onLocalityFocusChanged(true)}} onBlur={()=>{onAddressFocuseChanged(false)}} placeholder="near global market" />
             <Text style={[{fontSize:12,lineHeight:18,fontFamily:'Inter-Medium',color:'#0F0B28',marginLeft:20,marginTop:24}]}> Address Type </Text>
             <View style={[{flexDirection:'row',justifyContent: 'space-between',alignItems: 'center',alignSelf: 'center',marginHorizontal:20,marginTop:8,marginBottom:56}]}>
                 <View style={[{flex :1,borderColor:(index == 0 ? '#714FFF' : '#E3E3E3'),borderRadius:12,borderWidth:1,paddingVertical:11 }]}>

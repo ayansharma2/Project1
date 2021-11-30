@@ -233,3 +233,57 @@ const styles = StyleSheet.create({
   }
   
   });
+
+
+
+export function NavigationBarOnlineChat1(){
+    const [state,setState]  = useState(0)
+    return(
+      <View style = {[{flexDirection: 'column',backgroundColor: 'pink',paddingTop: 62}]}>
+      <View style={[{flexDirection:'row',width: '100%',justifyContent:'space-between',alignItems: 'center'}]}>
+        <View style={[{flexDirection:'row',alignItems: 'center'}]}>
+            <Image source={require("./assets/back_arrow.png")} style={[{marginLeft:16,height:32,width:32}]}/>
+            <Image source={require('./assets/image.png')} style={[{marginLeft:8,borderRadius:12,height:32,width:32}]}/>
+            <View style={[{marginLeft:8,flexDirection:'column'}]}>
+              <Text style={[{
+                letterSpacing:0.02,
+                fontFamily:'Inter-SemiBold',
+                fontSize:14,
+                lineHeight:20,
+                color:'#0F0B28'
+              }]}> Dr. Amit Mind </Text>
+
+              <Text style={[{fontFamily:'Inter-Regular',fontSize:12,lineHeight:18,letterSpacing:0.04,
+            color:'#767787'}]}> General Physician </Text>
+
+            </View>
+        </View>
+
+        <View style = {[{flexDirection: 'row' , alignItems: 'center',marginEnd:24}]}>
+          <Image source={require('./assets/Call.png')} style={[{height : 24,width:24}]}/>
+          <View style = {[{height : 10.5,width:1,backgroundColor: '#F0F3F6',marginLeft: 16,marginRight:16}]}/>
+          <Image source={require('./assets/Video.png')} style={[{height : 24,width:24}]}/>
+          </View>        
+      </View>
+        <View style={[{width:'100%',marginTop:28,flexDirection:'row'}]}>
+          <Text style={[{textAlign: 'center',
+          flex:1,
+          color : (state==0)?'#714FFF':'#767787',
+          fontSize:(state==0)?17:14,
+          lineHeight:(state==0)?20:21,
+          letterSpacing:(state==1)?0.02:0.0,
+          fontFamily:(state==0)?'Inter-SemiBold':'Inter-Medium',
+          }]} onPress={()=>setState(0)}> Appointment</Text>
+
+          <Text style={[{textAlign: 'center',
+          flex:1,
+          color : (state==1)?'#714FFF':'#767787',
+          fontSize:(state==1)?17:14,
+          lineHeight:(state==1)?20:21,
+          letterSpacing:(state==1)?0.02:0.0,
+          fontFamily:(state==1)?'Inter-SemiBold':'Inter-Medium',
+          }]} onPress={()=>setState(1)}> Summary</Text>
+        </View>
+      </View>
+    )
+}
